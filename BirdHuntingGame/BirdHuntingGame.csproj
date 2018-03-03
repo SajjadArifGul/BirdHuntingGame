@@ -45,14 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Code\BirdBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\BirdTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Code\Extensions.cs" />
+    <Compile Include="Forms\PlayGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\PlayGameForm.Designer.cs">
+      <DependentUpon>PlayGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\PlayGameForm.resx">
+      <DependentUpon>PlayGameForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,6 +85,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bird6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper2Animated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper4Animated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion-animation.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
