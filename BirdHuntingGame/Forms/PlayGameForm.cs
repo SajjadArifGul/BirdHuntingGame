@@ -18,14 +18,17 @@ namespace BirdHuntingGame.Forms
 	{
 		private GameStatus GameStatus;
 		private Guns SelectedGun;
+		private Birds SelectedBird;
+
 		private List<BirdTimer> FlyingBirds = new List<BirdTimer>();
 
-		public PlayGameForm(Guns gun)
+		public PlayGameForm(Guns gun, Birds bird)
 		{
 			InitializeComponent();
 
 			this.GameStatus = GameStatus.Continue;
 			this.SelectedGun = gun;
+			this.SelectedBird = bird;
 
 			SetupCrossHair();
 
@@ -245,7 +248,20 @@ namespace BirdHuntingGame.Forms
 			birdBox.Size = new Size(birdBoxSize, birdBoxSize);
 			birdBox.SizeMode = PictureBoxSizeMode.StretchImage;
 			birdBox.Direction = Direction;
-			birdBox.Image = Properties.Resources.bird3;
+			
+			if (SelectedBird == Birds.Parrot)
+			{
+				birdBox.Image = Properties.Resources.bird3;
+			}
+			else if (SelectedBird == Birds.Stork)
+			{
+				birdBox.Image = Properties.Resources.Stork_Bird;
+			}
+			else if (SelectedBird == Birds.Crow)
+			{
+				birdBox.Image = Properties.Resources.bird2;
+			}
+
 			birdBox.BackColor = Color.Transparent;
 
 			birdBox.Location = new Point(this.Width, Extensions.GetLimitedRandomNumber(200, this.Height - 200));
@@ -337,7 +353,8 @@ namespace BirdHuntingGame.Forms
 		{
 			//GameOptionsForm.Instance.Close();
 			this.Hide();
-			GameOptionsForm.Instance.ShowDialog();
+
+			GameOptionsForm.Instance.Show();
 		}
 	}
 }

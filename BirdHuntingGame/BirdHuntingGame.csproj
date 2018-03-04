@@ -183,5 +183,11 @@
   <ItemGroup>
     <None Include="Resources\settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stork-Bird.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteparrot-animation-3.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

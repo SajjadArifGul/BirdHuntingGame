@@ -59,23 +59,24 @@ namespace BirdHuntingGame.Forms
 		
 		private void cmbBird_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (cmbBird.SelectedItem.ToString() == "Bird 1")
-			{
-				pbBird.Image = Properties.Resources.bird1;
-			}
-			else if (cmbBird.SelectedItem.ToString() == "Bird 2")
-			{
-				pbBird.Image = Properties.Resources.bird2;
-			}
-			else if (cmbBird.SelectedItem.ToString() == "Bird 3")
+			if (cmbBird.SelectedItem.ToString() == "Parrot")
 			{
 				pbBird.Image = Properties.Resources.bird3;
+			}
+			else if (cmbBird.SelectedItem.ToString() == "Stork")
+			{
+				pbBird.Image = Properties.Resources.Stork_Bird;
+			}
+			else if (cmbBird.SelectedItem.ToString() == "Crow")
+			{
+				pbBird.Image = Properties.Resources.bird2;
 			}
 		}
 
 		private void btnStartGame_Click(object sender, EventArgs e)
 		{
 			Guns SelectedGun = Guns.Shotgun;
+			Birds SelectedBird = Birds.Parrot;
 
 			if (cmbGun.SelectedItem.ToString() == "9mm Glock 17")
 			{
@@ -90,7 +91,20 @@ namespace BirdHuntingGame.Forms
 				SelectedGun = Guns.Shotgun;
 			}
 
-			PlayGameForm playGameForm = new PlayGameForm(SelectedGun);
+			if (cmbBird.SelectedItem.ToString() == "Parrot")
+			{
+				SelectedBird = Birds.Parrot;
+			}
+			else if (cmbBird.SelectedItem.ToString() == "Stork")
+			{
+				SelectedBird = Birds.Stork;
+			}
+			else if (cmbBird.SelectedItem.ToString() == "Crow")
+			{
+				SelectedBird = Birds.Crow;
+			}
+
+			PlayGameForm playGameForm = new PlayGameForm(SelectedGun, SelectedBird);
 			this.Hide();
 			playGameForm.ShowDialog(); 
 		}

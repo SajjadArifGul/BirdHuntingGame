@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace BirdHuntingGame.Code
 {
+	public enum GameStatus
+	{
+		Continue = 1,
+		Pause = 2
+	}
+
 	public enum Guns
 	{
 		Shotgun = 1,
@@ -13,9 +19,10 @@ namespace BirdHuntingGame.Code
 		Glock = 3
 	}
 
-	public enum GameStatus
+	public enum Birds
 	{
-		Continue = 1,
-		Pause = 2
+		Parrot = 1,
+		Stork = 2,
+		Crow = 3
 	}
 }

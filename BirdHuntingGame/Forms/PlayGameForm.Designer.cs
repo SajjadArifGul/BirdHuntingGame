@@ -31,6 +31,8 @@
 			this.btnClose = new System.Windows.Forms.Button();
 			this.btnPause = new System.Windows.Forms.Button();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnClose
@@ -84,13 +86,26 @@
 			this.btnBack.UseVisualStyleBackColor = false;
 			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = global::BirdHuntingGame.Properties.Resources.whiteparrot_animation_3;
+			this.pictureBox1.Location = new System.Drawing.Point(371, 414);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(53, 63);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 17;
+			this.pictureBox1.TabStop = false;
+			// 
 			// PlayGameForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::BirdHuntingGame.Properties.Resources.Wallpaper4Animated;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(560, 412);
+			this.ClientSize = new System.Drawing.Size(560, 476);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.btnPause);
 			this.Controls.Add(this.btnClose);
@@ -101,6 +116,7 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.PlayGameForm_Load);
 			this.Click += new System.EventHandler(this.PlayGameForm_Click);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -110,5 +126,6 @@
 		private System.Windows.Forms.Button btnClose;
 		private System.Windows.Forms.Button btnPause;
 		private System.Windows.Forms.Button btnBack;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

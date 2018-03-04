@@ -86,9 +86,9 @@
 			this.cmbBird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbBird.FormattingEnabled = true;
 			this.cmbBird.Items.AddRange(new object[] {
-            "Bird 1",
-            "Bird 2",
-            "Bird 3"});
+            "Parrot",
+            "Stork",
+            "Crow"});
 			this.cmbBird.Location = new System.Drawing.Point(187, 369);
 			this.cmbBird.Name = "cmbBird";
 			this.cmbBird.Size = new System.Drawing.Size(262, 33);
