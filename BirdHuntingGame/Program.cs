@@ -1,4 +1,5 @@
-﻿using BirdHuntingGame.Forms;
+﻿using BirdHuntingGame.Code;
+using BirdHuntingGame.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace BirdHuntingGame
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new PlayGameForm());
+			//Application.Run(new PlayGameForm(Guns.Glock));
+			Application.Run(GameOptionsForm.Instance);
 		}
 	}
 }

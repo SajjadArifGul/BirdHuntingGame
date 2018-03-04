@@ -51,7 +51,14 @@
     <Compile Include="Code\BirdTimer.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Code\Enums.cs" />
     <Compile Include="Code\Extensions.cs" />
+    <Compile Include="Forms\GameOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GameOptionsForm.Designer.cs">
+      <DependentUpon>GameOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlayGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\GameOptionsForm.resx">
+      <DependentUpon>GameOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayGameForm.resx">
       <DependentUpon>PlayGameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +134,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\explosion-animation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glock-crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\M1Garand-crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShotGun-crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glock-crosshair-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\M1Garand-crosshair-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShotGun-crosshair-small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgwallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glock-Gun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\M1Garand-Gun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shotgun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control.pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

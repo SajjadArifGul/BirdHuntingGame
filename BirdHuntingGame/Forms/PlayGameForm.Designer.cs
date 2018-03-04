@@ -28,83 +28,61 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.lbl1Y = new System.Windows.Forms.Label();
-			this.lbl1X = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.btnClose = new System.Windows.Forms.Button();
+			this.btnPause = new System.Windows.Forms.Button();
+			this.btnBack = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// label1
+			// btnClose
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 9);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(23, 13);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "1 X";
+			this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnClose.BackColor = System.Drawing.Color.Transparent;
+			this.btnClose.BackgroundImage = global::BirdHuntingGame.Properties.Resources.close1;
+			this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnClose.Location = new System.Drawing.Point(498, 12);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(50, 50);
+			this.btnClose.TabIndex = 14;
+			this.btnClose.UseVisualStyleBackColor = false;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
-			// label2
+			// btnPause
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(12, 31);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(23, 13);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "1 Y";
+			this.btnPause.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnPause.BackColor = System.Drawing.Color.Transparent;
+			this.btnPause.BackgroundImage = global::BirdHuntingGame.Properties.Resources.control_pause;
+			this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnPause.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnPause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.btnPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnPause.Location = new System.Drawing.Point(442, 12);
+			this.btnPause.Name = "btnPause";
+			this.btnPause.Size = new System.Drawing.Size(50, 50);
+			this.btnPause.TabIndex = 15;
+			this.btnPause.UseVisualStyleBackColor = false;
+			this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
 			// 
-			// lbl1Y
+			// btnBack
 			// 
-			this.lbl1Y.AutoSize = true;
-			this.lbl1Y.Location = new System.Drawing.Point(41, 31);
-			this.lbl1Y.Name = "lbl1Y";
-			this.lbl1Y.Size = new System.Drawing.Size(23, 13);
-			this.lbl1Y.TabIndex = 4;
-			this.lbl1Y.Text = "1 Y";
-			// 
-			// lbl1X
-			// 
-			this.lbl1X.AutoSize = true;
-			this.lbl1X.Location = new System.Drawing.Point(41, 9);
-			this.lbl1X.Name = "lbl1X";
-			this.lbl1X.Size = new System.Drawing.Size(23, 13);
-			this.lbl1X.TabIndex = 3;
-			this.lbl1X.Text = "1 X";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(53, 53);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(23, 13);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "1 Y";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(12, 53);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(35, 13);
-			this.label4.TabIndex = 6;
-			this.label4.Text = "Clicks";
-			// 
-			// label5
-			// 
-			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(12, 390);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(23, 13);
-			this.label5.TabIndex = 8;
-			this.label5.Text = "1 X";
-			// 
-			// backgroundWorker1
-			// 
-			this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+			this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnBack.BackColor = System.Drawing.Color.Transparent;
+			this.btnBack.BackgroundImage = global::BirdHuntingGame.Properties.Resources.settings;
+			this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBack.Location = new System.Drawing.Point(386, 12);
+			this.btnBack.Name = "btnBack";
+			this.btnBack.Size = new System.Drawing.Size(50, 50);
+			this.btnBack.TabIndex = 16;
+			this.btnBack.UseVisualStyleBackColor = false;
+			this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
 			// 
 			// PlayGameForm
 			// 
@@ -113,13 +91,9 @@
 			this.BackgroundImage = global::BirdHuntingGame.Properties.Resources.Wallpaper4Animated;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(560, 412);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.lbl1Y);
-			this.Controls.Add(this.lbl1X);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.btnBack);
+			this.Controls.Add(this.btnPause);
+			this.Controls.Add(this.btnClose);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "PlayGameForm";
@@ -128,18 +102,13 @@
 			this.Load += new System.EventHandler(this.PlayGameForm_Load);
 			this.Click += new System.EventHandler(this.PlayGameForm_Click);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label lbl1Y;
-		private System.Windows.Forms.Label lbl1X;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+
+		private System.Windows.Forms.Button btnClose;
+		private System.Windows.Forms.Button btnPause;
+		private System.Windows.Forms.Button btnBack;
 	}
 }

@@ -16,10 +16,39 @@ namespace BirdHuntingGame.Forms
 {
 	public partial class PlayGameForm : Form
 	{
-		Timer bird1Timer = new Timer();
+		private GameStatus GameStatus;
+		private Guns SelectedGun;
+		private List<BirdTimer> FlyingBirds = new List<BirdTimer>();
 
-		int WindowWidth = 0;
-		int WindowHeight = 0;
+		public PlayGameForm(Guns gun)
+		{
+			InitializeComponent();
+
+			this.GameStatus = GameStatus.Continue;
+			this.SelectedGun = gun;
+
+			SetupCrossHair();
+
+			this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+		}
+
+		private void SetupCrossHair()
+		{
+			if (SelectedGun == Guns.Shotgun)
+			{
+				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.ShotGun_crosshair_small.GetHicon());
+			}
+			else if (SelectedGun == Guns.M1Grand)
+			{
+				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.M1Garand_crosshair_small.GetHicon());
+			}
+			else if (SelectedGun == Guns.Glock)
+			{
+				this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.glock_crosshair_small.GetHicon());
+			}
+		}
+
+		#region SoundRelatedCode
 
 		[DllImport("winmm.dll")]
 		static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
@@ -44,7 +73,7 @@ namespace BirdHuntingGame.Forms
 			}
 			base.WndProc(ref m);
 		}
-		
+
 		protected override CreateParams CreateParams
 		{
 			get
@@ -55,187 +84,47 @@ namespace BirdHuntingGame.Forms
 			}
 		}
 
-		public PlayGameForm()
-		{
-			InitializeComponent();
-
-			//this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-			//this.TransparencyKey = Color.FromKnownColor(KnownColor.Control);
-			//this.Update();
-
-			this.Cursor = new System.Windows.Forms.Cursor(Properties.Resources.crosshair.GetHicon());
-
-			this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
-		}
-
-		private void PlayGameForm_Load(object sender, EventArgs e)
-		{	
-			WindowWidth = this.Width;
-			WindowHeight = this.Height;
-			
-			InitBirdTimer();
-
-			KnowSounds();
-			PlayForestBirdsSound();
-		}
-
 		public void KnowSounds()
 		{
-			mciSendString(@"open forest-and-birds.wav type waveaudio alias forest-and-birds", null, 0, IntPtr.Zero);
-			mciSendString(@"open gun1.wav type waveaudio alias gun1", null, 0, IntPtr.Zero);
-		}
-
-		public BirdTimer BirdTimer { get; set; }
-
-		public void InitBirdTimer()
-		{
-			if(BirdTimer != null)
-			{
-				BirdTimer.Stop();
-				BirdTimer.BirdBox.Dispose();
-				BirdTimer.Dispose();
-			}
-			
-			BirdTimer = new BirdTimer();
-			BirdTimer.BirdBox = NewBirdBox();
-			
-			BirdTimer.Interval = Extensions.GetRandomInterval();
-			BirdTimer.Tick += new EventHandler(BirdTimer_Tick);
-
-			this.Controls.Add(BirdTimer.BirdBox);
-
-			BirdTimer.Start();
-		}
-		
-		private void BirdTimer_Tick(object sender, EventArgs e)
-		{
-			int XLocation = 0;
-			int YLocation = 0;
-
-			if (BirdTimer.BirdBox.Status == "Alive")
-			{
-				if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
-				{
-					XLocation = this.WindowWidth;
-				}
-				else
-				{
-					XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetRandomNumber();
-				}
-
-				if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > WindowHeight)
-				{
-					BirdTimer.BirdBox.Status = "Downed";
-					return;
-				}
-				else if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height < 0)
-				{
-					BirdTimer.BirdBox.Status = "Downed";
-					return;
-				}
-				else
-				{
-					YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(-8, 8);
-				}
-
-				lbl1X.Text = XLocation.ToString();
-				lbl1Y.Text = YLocation.ToString();
-				
-				this.SuspendLayout();
-				BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
-				this.ResumeLayout();
-			}
-			else if(BirdTimer.BirdBox.Status == "Dead")
-			{
-				if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
-				{
-					BirdTimer.BirdBox.Status = "Downed";
-					return;
-				}
-				else
-				{
-					XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetLimitedRandomNumber(3, 5);
-				}
-
-				if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > WindowHeight)
-				{
-					BirdTimer.BirdBox.Status = "Downed";
-					return;
-				}
-				else
-				{
-					YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(5, 10);
-				}
-				
-				lbl1X.Text = XLocation.ToString();
-				lbl1Y.Text = YLocation.ToString();
-
-				this.SuspendLayout();
-				BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
-				this.ResumeLayout();
-			}
-			else
-			{
-				InitBirdTimer();
-			}
-
-			label5.Text = BirdTimer.BirdBox.Location.ToString();
-		}
-
-		public BirdBox NewBirdBox()
-		{
-			BirdBox birdBox = new BirdBox();
-			birdBox.Size = new Size(100, 100);
-			birdBox.SizeMode = PictureBoxSizeMode.StretchImage;
-			birdBox.Image = Properties.Resources.bird1;
-			birdBox.BackColor = Color.Transparent;
-
-			birdBox.Location = new Point(WindowWidth, Extensions.GetLimitedRandomNumber(200, WindowHeight - 200));
-
-			birdBox.Click += new EventHandler(birdBox_Click);
-
-			return birdBox;
-		}
-
-		private void birdBox_Click(object sender, EventArgs e)
-		{
-			BirdBox birdbox = (BirdBox)sender;
-
-			if(birdbox != null)
-			{
-				birdbox.Status = "Dead";
-				PlayGunSound();
-				birdbox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
-				birdbox.Image = Properties.Resources.explosion_animation;
-			}
-		}
-		
-		private void PlayGameForm_Click(object sender, EventArgs e)
-		{
-			PlayGunSound();
-		}
-
-		private void birdBox1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-		{
+			mciSendString(@"open Sounds/forest-and-birds.wav type waveaudio alias forest-and-birds", null, 0, IntPtr.Zero);
+			mciSendString(@"open Sounds/Glock-Gun-Fire.wav type waveaudio alias Glock-Gun-Fire", null, 0, IntPtr.Zero);
+			mciSendString(@"open Sounds/Shotgun-Fire.wav type waveaudio alias Shotgun-Fire", null, 0, IntPtr.Zero);
+			mciSendString(@"open Sounds/M1Garand-Fire.wav type waveaudio alias M1Garand-Fire", null, 0, IntPtr.Zero);
 		}
 
 		public void PlayGunSound()
 		{
 			new System.Threading.Thread(() =>
 			{
-				FileStream gunSoundFile = new FileStream("gun1.wav", FileMode.Open, FileAccess.Read);
+				if (SelectedGun == Guns.Shotgun)
+				{
+					FileStream gunSoundFile = new FileStream("Sounds/Shotgun-Fire.wav", FileMode.Open, FileAccess.Read);
+					new SoundPlayer(gunSoundFile).Play();
+				}
+				else if (SelectedGun == Guns.M1Grand)
+				{
+					FileStream gunSoundFile = new FileStream("Sounds/M1Garand-Fire.wav", FileMode.Open, FileAccess.Read);
+					new SoundPlayer(gunSoundFile).Play();
+				}
+				else if (SelectedGun == Guns.Glock)
+				{
+					FileStream gunSoundFile = new FileStream("Sounds/Glock-Gun-Fire.wav", FileMode.Open, FileAccess.Read);
+					new SoundPlayer(gunSoundFile).Play();
+				}
+			}).Start();
+		}
+
+		public void PlayBirdHitSound()
+		{
+			new System.Threading.Thread(() =>
+			{
+				FileStream gunSoundFile = new FileStream("Sounds/bird-hit.wav", FileMode.Open, FileAccess.Read);
 				new SoundPlayer(gunSoundFile).Play();
 			}).Start();
 
 			//mciSendString(@"play gun1", null, 0, IntPtr.Zero);
 		}
-		
+
 		public void PlayForestBirdsSound()
 		{
 			//new System.Threading.Thread(() => {
@@ -246,6 +135,209 @@ namespace BirdHuntingGame.Forms
 			//}).Start();			
 
 			mciSendString(@"play forest-and-birds notify", null, 0, IntPtr.Zero);
+		}
+		#endregion
+
+		private void PlayGameForm_Load(object sender, EventArgs e)
+		{
+			AddNewBird("", "");
+			AddNewBird("", "");
+			AddNewBird("", "");
+
+			KnowSounds();
+			PlayForestBirdsSound();
+		}
+		
+		public void AddNewBird(string Direction, string Bird)
+		{
+			BirdTimer BirdTimer = new BirdTimer();
+			BirdTimer.BirdBox = NewBirdBox(Direction, Bird);
+			
+			BirdTimer.Interval = Extensions.GetRandomInterval();
+			BirdTimer.Tick += new EventHandler(BirdTimer_Tick);
+
+			this.Controls.Add(BirdTimer.BirdBox);
+
+			FlyingBirds.Add(BirdTimer);
+
+			BirdTimer.Start();
+		}
+		
+		private void BirdTimer_Tick(object sender, EventArgs e)
+		{
+			BirdTimer BirdTimer = (BirdTimer)sender;
+
+			if (BirdTimer != null)
+			{
+				int XLocation = 0;
+				int YLocation = 0;
+
+				if (BirdTimer.BirdBox.Status == "Alive")
+				{
+					if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
+					{
+						//XLocation = this.Width;
+						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetRandomNumber();
+						BirdTimer.BirdBox.Status = "Downed";
+					}
+					else
+					{
+						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetRandomNumber();
+					}
+
+					if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > this.Height - 50)
+					{
+						BirdTimer.BirdBox.Status = "Downed";
+						return;
+					}
+					else if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height - 50 < 0)
+					{
+						BirdTimer.BirdBox.Status = "Downed";
+						return;
+					}
+					else
+					{
+						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(-8, 8);
+					}
+					
+					//this.SuspendLayout();
+					BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
+					//this.ResumeLayout();
+				}
+				else if (BirdTimer.BirdBox.Status == "Dead")
+				{
+					if (BirdTimer.BirdBox.Location.X + BirdTimer.BirdBox.Size.Width < 0)
+					{
+						BirdTimer.BirdBox.Status = "Downed";
+						return;
+					}
+					else
+					{
+						XLocation = BirdTimer.BirdBox.Location.X - Extensions.GetLimitedRandomNumber(5, 10);
+					}
+
+					if (BirdTimer.BirdBox.Location.Y + BirdTimer.BirdBox.Size.Height > this.Height)
+					{
+						BirdTimer.BirdBox.Status = "Downed";
+						return;
+					}
+					else
+					{
+						YLocation = BirdTimer.BirdBox.Location.Y + Extensions.GetLimitedRandomNumber(10, 15);
+					}
+					
+					//this.SuspendLayout();
+					BirdTimer.BirdBox.Location = new Point(XLocation, YLocation);
+					//this.ResumeLayout();
+				}
+				else if(BirdTimer.BirdBox.Status == "Downed")
+				{
+					RemoveBird(BirdTimer);
+					AddNewBird("", "");
+				}				
+			}
+		}
+
+		public BirdBox NewBirdBox(string Direction, string Bird)
+		{
+			BirdBox birdBox = new BirdBox();
+			var birdBoxSize = Extensions.GetLimitedRandomNumber(50, 120);
+			birdBox.Size = new Size(birdBoxSize, birdBoxSize);
+			birdBox.SizeMode = PictureBoxSizeMode.StretchImage;
+			birdBox.Direction = Direction;
+			birdBox.Image = Properties.Resources.bird3;
+			birdBox.BackColor = Color.Transparent;
+
+			birdBox.Location = new Point(this.Width, Extensions.GetLimitedRandomNumber(200, this.Height - 200));
+
+			birdBox.Click += new EventHandler(birdBox_Click);
+			birdBox.DoubleClick += new EventHandler(birdBox_Click);
+
+			return birdBox;
+		}
+
+		private void birdBox_Click(object sender, EventArgs e)
+		{
+			if (GameStatus == GameStatus.Continue)
+			{
+				BirdBox birdbox = (BirdBox)sender;
+
+				if (birdbox != null && birdbox.Status != "Dead")
+				{
+					PlayBirdHitSound();
+					birdbox.Status = "Dead";
+					birdbox.Image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+					birdbox.Image = Properties.Resources.explosion_animation;
+				}
+				else
+				{
+					PlayGunSound();
+				}
+			}
+		}
+		
+		private void PlayGameForm_Click(object sender, EventArgs e)
+		{
+			if (GameStatus == GameStatus.Continue)
+			{
+				PlayGunSound();
+			}
+		}		
+
+		private void RemoveBird(BirdTimer BirdTimer)
+		{
+			if (BirdTimer != null)
+			{
+				FlyingBirds.Remove(BirdTimer);
+
+				BirdTimer.Stop();
+				BirdTimer.BirdBox.Dispose();
+				BirdTimer.Dispose();
+			}
+		}
+
+		private void btnClose_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void btnPause_Click(object sender, EventArgs e)
+		{
+			if(GameStatus == GameStatus.Continue)
+			{
+				GameStatus = GameStatus.Pause;
+
+				foreach (var bird in FlyingBirds)
+				{
+					if(bird != null)
+					{
+						bird.Stop();
+					}
+				}
+
+				btnPause.BackgroundImage = Properties.Resources.control_play;
+			}
+			else
+			{
+				GameStatus = GameStatus.Continue;
+
+				foreach (var bird in FlyingBirds)
+				{
+					if (bird != null)
+					{
+						bird.Start();
+					}
+				}
+
+				btnPause.BackgroundImage = Properties.Resources.control_pause;
+			}
+		}
+
+		private void btnBack_Click(object sender, EventArgs e)
+		{
+			//GameOptionsForm.Instance.Close();
+			this.Hide();
+			GameOptionsForm.Instance.ShowDialog();
 		}
 	}
 }

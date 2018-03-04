@@ -12,7 +12,7 @@ namespace BirdHuntingGame.Code
 
 		public static int GetRandomInterval()
 		{
-			return RandomTicker.Next(1, 10);
+			return RandomTicker.Next(5, 100);
 		}
 
 		public static int GetRandomNumber()
