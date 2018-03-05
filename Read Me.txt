@@ -1,0 +1,9 @@
+Hi. Thanks for Buying this Game. Please follow below steps to setup this game.
+
+1- Open your Visual Studio (preferably 2015 and over).
+2- Goto File Option in Menu and click on Open > Project/Solution. Select this solution file and click Open.
+3- Goto Build Option in Menu and click Rebuild
+4- Once the application is successfully rebuild, copy Sounds folder to Bin > Debug folder.
+5- Now you can debug and execute the application and it will work like a charm.
+
+If you still have any error, please issue a support ticket and I will help you resolve issues. Thanks.  

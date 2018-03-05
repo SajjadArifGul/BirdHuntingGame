@@ -103,9 +103,6 @@
     <None Include="Resources\crosshair.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bird1.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bird2.gif" />
   </ItemGroup>
   <ItemGroup>

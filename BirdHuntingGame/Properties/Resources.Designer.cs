@@ -19,7 +19,7 @@ namespace BirdHuntingGame.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,16 +73,6 @@ namespace BirdHuntingGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bird1 {
-            get {
-                object obj = ResourceManager.GetObject("bird1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bird2 {
             get {
                 object obj = ResourceManager.GetObject("bird2", resourceCulture);
@@ -96,46 +86,6 @@ namespace BirdHuntingGame.Properties {
         internal static System.Drawing.Bitmap bird3 {
             get {
                 object obj = ResourceManager.GetObject("bird3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bird4 {
-            get {
-                object obj = ResourceManager.GetObject("bird4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bird5 {
-            get {
-                object obj = ResourceManager.GetObject("bird5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bird6 {
-            get {
-                object obj = ResourceManager.GetObject("bird6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap close {
-            get {
-                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,29 +123,9 @@ namespace BirdHuntingGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap crosshair {
-            get {
-                object obj = ResourceManager.GetObject("crosshair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap explosion_animation {
             get {
                 object obj = ResourceManager.GetObject("explosion-animation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap glock_crosshair {
-            get {
-                object obj = ResourceManager.GetObject("glock-crosshair", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,16 +153,6 @@ namespace BirdHuntingGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap M1Garand_crosshair {
-            get {
-                object obj = ResourceManager.GetObject("M1Garand-crosshair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap M1Garand_crosshair_small {
             get {
                 object obj = ResourceManager.GetObject("M1Garand-crosshair-small", resourceCulture);
@@ -246,16 +166,6 @@ namespace BirdHuntingGame.Properties {
         internal static System.Drawing.Bitmap M1Garand_Gun {
             get {
                 object obj = ResourceManager.GetObject("M1Garand-Gun", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap red_icon {
-            get {
-                object obj = ResourceManager.GetObject("red-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,16 +193,6 @@ namespace BirdHuntingGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShotGun_crosshair {
-            get {
-                object obj = ResourceManager.GetObject("ShotGun-crosshair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ShotGun_crosshair_small {
             get {
                 object obj = ResourceManager.GetObject("ShotGun-crosshair-small", resourceCulture);
@@ -306,46 +206,6 @@ namespace BirdHuntingGame.Properties {
         internal static System.Drawing.Bitmap Stork_Bird {
             get {
                 object obj = ResourceManager.GetObject("Stork-Bird", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Target {
-            get {
-                object obj = ResourceManager.GetObject("Target", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Wallpaper1 {
-            get {
-                object obj = ResourceManager.GetObject("Wallpaper1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Wallpaper2Animated {
-            get {
-                object obj = ResourceManager.GetObject("Wallpaper2Animated", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Wallpaper3 {
-            get {
-                object obj = ResourceManager.GetObject("Wallpaper3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

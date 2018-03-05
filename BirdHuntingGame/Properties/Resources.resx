@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="red-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\red-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Target" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Target.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="control.play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control.play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,14 +133,8 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wallpaper1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wallpaper1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="M1Garand-crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\M1Garand-crosshair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Glock-Gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Glock-Gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,47 +148,17 @@
   <data name="control.pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control.pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bird4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bird4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glock-crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\glock-crosshair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crosshair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bird5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bird5.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="glock-crosshair-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\glock-crosshair-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ShotGun-crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShotGun-crosshair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bird6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bird6.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="explosion-animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosion-animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bird1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bird1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Wallpaper3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wallpaper3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bird2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bird2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Wallpaper4Animated" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wallpaper4Animated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Wallpaper2Animated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Wallpaper2Animated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShotGun-crosshair-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShotGun-crosshair-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
