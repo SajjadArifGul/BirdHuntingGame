@@ -14,6 +14,11 @@ Please follow below steps to setup this game.
 5- Now you can debug and execute the application and it will work like a charm.
 <br />
 
+# Screenshots
+
+![Select Gun and Bird](https://i.imgur.com/3Qq3I0P.jpg)
+![Main Game Window](https://i.imgur.com/uYg9B79.jpg)
+
 # Credits
 
 I have used free public domain images and sound files from around the web.
@@ -41,11 +46,6 @@ Sounds are stored in Sounds folder and credits are as follows
 3) Glock-Gun-Fire.wav from http://soundbible.com/2122-40-Smith-Wesson.html
 4) M1Garand-Fire.wav from http://soundbible.com/1855-Gun-Loud.html
 5) Shotgun-Fire.wav from http://soundbible.com/2095-Mossberg-500-Pump-Shotgun.html
-
-# Screenshots
-
-![Select Gun and Bird](https://i.imgur.com/3Qq3I0P.jpg)
-![Main Game Window](https://i.imgur.com/uYg9B79.jpg)
 
 <br />
 If you still have any error, please send me an email and I will help you resolve issues. Thanks. 
